@@ -8,10 +8,10 @@
 // by the Firestore security rules instead (see README.md).
 // ==========================================================
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+   apiKey: "AIzaSyCqkx1uxDabFysOnm8S6E749-C35XyFr6M",
+  authDomain: "k-rezolution.firebaseapp.com",
+  projectId: "k-rezolution",
+  storageBucket: "k-rezolution.firebasestorage.app",
+  messagingSenderId: "901392884038",
+  appId: "1:901392884038:web:27f48744172e5ceb38c547",
 };
