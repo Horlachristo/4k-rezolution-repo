@@ -220,11 +220,34 @@ a:focus-visible, button:focus-visible {
 /* About */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 56px;
+  grid-template-columns: 220px 1.4fr 1fr;
+  gap: 40px;
   align-items: start;
 }
-.about-copy p { color: var(--paper-dim); }
+.about-photo img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+  border: 1px solid rgba(236,237,233,0.12);
+}
+.about-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 0 4px;
+}
+.about-role {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--cyan);
+  margin: 0 0 18px;
+}
+.about-copy p:not(.about-name):not(.about-role) { color: var(--paper-dim); }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { max-width: 220px; }
+}
 .about-stats { display: flex; flex-direction: column; gap: 24px; }
 .stat {
   border-left: 2px solid var(--cyan);
