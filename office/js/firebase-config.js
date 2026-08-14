@@ -7,11 +7,11 @@
 // client identifier, not a secret. Access control is handled
 // by the Firestore security rules instead (see README.md).
 // ==========================================================
-export const firebaseConfig = {
-   apiKey: "AIzaSyCqkx1uxDabFysOnm8S6E749-C35XyFr6M",
-  authDomain: "k-rezolution.firebaseapp.com",
-  projectId: "k-rezolution",
-  storageBucket: "k-rezolution.firebasestorage.app",
-  messagingSenderId: "901392884038",
-  appId: "1:901392884038:web:27f48744172e5ceb38c547",
+  export const firebaseConfig = {
+  apiKey: "AIzaSyCP_OJUTVDmkwdR2_8NHu8V7X6jS8u2GSg",
+  authDomain: "k-rezolution-f4daf.firebaseapp.com",
+  projectId: "k-rezolution-f4daf",
+  storageBucket: "k-rezolution-f4daf.firebasestorage.app",
+  messagingSenderId: "40958521296",
+  appId: "1:40958521296:web:237a4d39aa45c1e5ead3d5",
 };
