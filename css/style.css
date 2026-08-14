@@ -277,7 +277,14 @@ a:focus-visible, button:focus-visible {
   aspect-ratio: 16/10;
   border-radius: 3px;
   margin-bottom: 14px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(236,237,233,0.1);
+  transition: transform 0.2s;
 }
+.media-card a:hover .media-thumb { transform: scale(1.02); }
 .media-tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
