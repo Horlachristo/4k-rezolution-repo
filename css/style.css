@@ -283,6 +283,11 @@ a:focus-visible, button:focus-visible {
   margin: 0;
   color: var(--paper-dim);
 }
+.about-block:hover {
+  border-color: rgba(236,237,233,0.3);
+  transition: border-color 0.2s ease, background 0.2s ease;
+  background: rgba(236,237,233,0.05);
+}
 
 /* Values section */
 .values-section { margin-top: 48px; }
@@ -387,6 +392,72 @@ a:focus-visible, button:focus-visible {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* Section Modals (Mission & Vision) */
+.section-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+.section-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+.section-modal-content {
+  background: var(--paper);
+  border-radius: 8px;
+  padding: 48px 40px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+.section-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--ink);
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.section-modal-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.section-modal-inner {
+  color: var(--ink);
+}
+.section-modal-inner h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.section-modal-inner p {
+  color: var(--ink-soft);
 }
 
 @media (max-width: 900px) {

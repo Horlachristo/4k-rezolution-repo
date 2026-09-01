@@ -84,3 +84,77 @@ document.addEventListener('keydown', (e) => {
     document.body.style.overflow = 'auto';
   }
 });
+
+// Mission & Vision modal functionality
+const missionBlock = document.querySelector('[data-section="mission"]');
+const visionBlock = document.querySelector('[data-section="vision"]');
+const missionModal = document.getElementById('missionModal');
+const visionModal = document.getElementById('visionModal');
+const closeMissionModal = document.getElementById('closeMissionModal');
+const closeVisionModal = document.getElementById('closeVisionModal');
+const missionTitle = document.getElementById('missionTitle');
+const missionBody = document.getElementById('missionBody');
+const visionTitle = document.getElementById('visionTitle');
+const visionBody = document.getElementById('visionBody');
+
+const missionData = {
+  title: 'Our Mission',
+  description: '4K Rezolution exists to give young leaders, creatives, and communicators a platform to build visibility, sharpen their voice, and turn ideas into visible impact — starting on campus and reaching beyond it.'
+};
+
+const visionData = {
+  title: 'Our Vision',
+  description: 'A generation of students who lead with clarity, communicate with purpose, and build platforms — not just profiles — for the causes and communities they care about.'
+};
+
+// Mission modal
+missionBlock.addEventListener('click', () => {
+  missionBody.textContent = missionData.description;
+  missionModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+});
+
+closeMissionModal.addEventListener('click', () => {
+  missionModal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+});
+
+missionModal.addEventListener('click', (e) => {
+  if (e.target === missionModal.querySelector('.section-modal-backdrop')) {
+    missionModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
+
+// Vision modal
+visionBlock.addEventListener('click', () => {
+  visionBody.textContent = visionData.description;
+  visionModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+});
+
+closeVisionModal.addEventListener('click', () => {
+  visionModal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+});
+
+visionModal.addEventListener('click', (e) => {
+  if (e.target === visionModal.querySelector('.section-modal-backdrop')) {
+    visionModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
+
+// Close modals on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (missionModal.style.display === 'flex') {
+      missionModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    if (visionModal.style.display === 'flex') {
+      visionModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  }
+});
