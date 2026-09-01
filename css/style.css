@@ -266,6 +266,48 @@ a:focus-visible, button:focus-visible {
   color: var(--steel);
 }
 
+/* About intro (Mission & Vision) */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.about-block {
+  padding: 24px;
+  background: var(--ink-soft);
+  border-radius: 6px;
+  border: 1px solid rgba(236,237,233,0.1);
+}
+.about-block p {
+  margin: 0;
+  color: var(--paper-dim);
+}
+
+/* Values section */
+.values-section { margin-top: 48px; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+.value-card {
+  padding: 20px 0;
+}
+.value-card h4 {
+  margin: 0 0 12px;
+}
+.value-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .about-intro { grid-template-columns: 1fr; }
+}
+
 /* Media grid */
 .media-grid {
   display: grid;
