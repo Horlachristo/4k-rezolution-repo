@@ -158,3 +158,54 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
+
+// Media lightbox functionality
+const mediaThumbWrappers = document.querySelectorAll('.media-thumb-wrapper');
+const mediaModal = document.getElementById('mediaModal');
+const closeMediaModal = document.getElementById('closeMediaModal');
+const mediaImage = document.getElementById('mediaImage');
+const mediaVideo = document.getElementById('mediaVideo');
+const mediaModalBackdrop = mediaModal.querySelector('.media-modal-backdrop');
+
+mediaThumbWrappers.forEach(wrapper => {
+  wrapper.addEventListener('click', () => {
+    const mediaType = wrapper.dataset.mediaType;
+    const mediaUrl = wrapper.dataset.mediaUrl;
+
+    // Hide both and reset
+    mediaImage.style.display = 'none';
+    mediaVideo.style.display = 'none';
+    mediaVideo.src = '';
+
+    if (mediaType === 'image') {
+      mediaImage.src = mediaUrl;
+      mediaImage.style.display = 'block';
+    } else if (mediaType === 'video') {
+      mediaVideo.src = mediaUrl;
+      mediaVideo.style.display = 'block';
+    }
+
+    mediaModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+closeMediaModal.addEventListener('click', () => {
+  mediaModal.style.display = 'none';
+  mediaVideo.pause();
+  document.body.style.overflow = 'auto';
+});
+
+mediaModalBackdrop.addEventListener('click', () => {
+  mediaModal.style.display = 'none';
+  mediaVideo.pause();
+  document.body.style.overflow = 'auto';
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mediaModal.style.display === 'flex') {
+    mediaModal.style.display = 'none';
+    mediaVideo.pause();
+    document.body.style.overflow = 'auto';
+  }
+});

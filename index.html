@@ -147,36 +147,50 @@
 
     <div class="media-grid">
       <article class="media-card">
-        <a href="media/signout-flyer.jpeg" target="_blank" rel="noopener">
+        <div class="media-thumb-wrapper" data-media-type="image" data-media-url="media/signout-flyer.jpeg">
           <img class="media-thumb" src="media/signout-flyer.jpeg" alt="NAITS LASUED Sign-Out Flyer" loading="lazy">
-        </a>
+        </div>
         <p class="media-tag">DESIGN</p>
         <h3>NAITS LASUED — Pioneer Set Sign-Out Flyer</h3>
       </article>
 
       <article class="media-card">
-        <a href="media/lifeafterschool-vlog.mp4" target="_blank" rel="noopener">
+        <div class="media-thumb-wrapper" data-media-type="video" data-media-url="media/lifeafterschool-vlog.mp4">
           <img class="media-thumb" src="media/lifeafterschool-thumb.jpeg" alt="Life After School Summit vlog" loading="lazy">
-        </a>
+        </div>
         <p class="media-tag">VIDEO</p>
         <h3>Life After School Summit — vlog</h3>
       </article>
 
       <article class="media-card">
-        <a href="media/mtn-walk-3.jpeg" target="_blank" rel="noopener">
+        <div class="media-thumb-wrapper" data-media-type="image" data-media-url="media/mtn-walk-3.jpeg">
           <img class="media-thumb" src="media/mtn-walk-3.jpeg" alt="MTN Anti-Substance Abuse walk" loading="lazy">
-        </a>
+        </div>
         <p class="media-tag">PHOTOGRAPHY</p>
         <h3>MTN Anti-Substance Abuse Walk</h3>
       </article>
 
       <article class="media-card">
-        <a href="media/mtn-walk-1.jpeg" target="_blank" rel="noopener">
+        <div class="media-thumb-wrapper" data-media-type="image" data-media-url="media/mtn-walk-1.jpeg">
           <img class="media-thumb" src="media/mtn-walk-1.jpeg" alt="MTN Anti-Substance Abuse walk" loading="lazy">
-        </a>
+        </div>
         <p class="media-tag">PHOTOGRAPHY</p>
         <h3>MTN Foundation — "Healthy Body, Healthy Mind" Campaign</h3>
       </article>
+    </div>
+
+    <!-- Media Lightbox Modal (hidden by default) -->
+    <div id="mediaModal" class="media-modal" style="display: none;">
+      <div class="media-modal-backdrop"></div>
+      <div class="media-modal-content">
+        <button class="media-modal-close" id="closeMediaModal" aria-label="Close media">&times;</button>
+        <div class="media-modal-inner">
+          <img id="mediaImage" class="media-modal-image" style="display: none; max-width: 100%; max-height: 90vh; border-radius: 8px;">
+          <video id="mediaVideo" class="media-modal-video" controls style="display: none; max-width: 100%; max-height: 90vh; border-radius: 8px;">
+            Your browser does not support video playback.
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 </section>

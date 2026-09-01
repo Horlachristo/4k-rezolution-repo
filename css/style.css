@@ -460,6 +460,73 @@ a:focus-visible, button:focus-visible {
   color: var(--ink-soft);
 }
 
+/* Media Lightbox Modal */
+.media-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+.media-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: -1;
+}
+.media-modal-content {
+  position: relative;
+  animation: slideUp 0.3s ease;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  z-index: 1001;
+}
+.media-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.media-modal-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-thumb-wrapper {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.media-thumb-wrapper:hover .media-thumb {
+  transform: scale(1.05);
+}
+
 @media (max-width: 900px) {
   .about-intro { grid-template-columns: 1fr; }
 }
