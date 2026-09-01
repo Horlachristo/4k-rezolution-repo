@@ -77,25 +77,37 @@
     <div class="values-section">
       <h3 style="font-size: 1.3rem; margin-bottom: 2rem; text-align: center; color: #2a2a2a;">Core Values</h3>
       <div class="values-grid">
-        <div class="value-card" style="border-left: 4px solid #3FD0C9; padding-left: 1.5rem;">
+        <div class="value-card" data-value="clarity" data-color="#3FD0C9" style="border-left: 4px solid #3FD0C9; padding-left: 1.5rem; cursor: pointer;">
           <h4 style="font-size: 1rem; font-weight: 700; color: #3FD0C9; margin-bottom: 0.5rem;">Clarity</h4>
           <p style="color: #555; line-height: 1.6;">Say it clearly, show it clearly. No noise, no fluff — just work that's easy to see and easy to understand.</p>
         </div>
-        <div class="value-card" style="border-left: 4px solid #E8447A; padding-left: 1.5rem;">
+        <div class="value-card" data-value="resolve" data-color="#E8447A" style="border-left: 4px solid #E8447A; padding-left: 1.5rem; cursor: pointer;">
           <h4 style="font-size: 1rem; font-weight: 700; color: #E8447A; margin-bottom: 0.5rem;">Resolve</h4>
           <p style="color: #555; line-height: 1.6;">Show up, follow through, keep building even when it's slow. Consistency over hype.</p>
         </div>
-        <div class="value-card" style="border-left: 4px solid #F2A93B; padding-left: 1.5rem;">
+        <div class="value-card" data-value="community" data-color="#F2A93B" style="border-left: 4px solid #F2A93B; padding-left: 1.5rem; cursor: pointer;">
           <h4 style="font-size: 1rem; font-weight: 700; color: #F2A93B; margin-bottom: 0.5rem;">Community</h4>
           <p style="color: #555; line-height: 1.6;">Media and leadership only matter if they serve people. Every project should leave a community better informed, more connected, or more empowered.</p>
         </div>
-        <div class="value-card" style="border-left: 4px solid #8B93A1; padding-left: 1.5rem;">
+        <div class="value-card" data-value="growth" data-color="#8B93A1" style="border-left: 4px solid #8B93A1; padding-left: 1.5rem; cursor: pointer;">
           <h4 style="font-size: 1rem; font-weight: 700; color: #8B93A1; margin-bottom: 0.5rem;">Growth</h4>
           <p style="color: #555; line-height: 1.6;">Stay a student of the craft — always learning, always refining, always open to feedback.</p>
         </div>
-        <div class="value-card" style="border-left: 4px solid #3FD0C9; padding-left: 1.5rem;">
+        <div class="value-card" data-value="integrity" data-color="#3FD0C9" style="border-left: 4px solid #3FD0C9; padding-left: 1.5rem; cursor: pointer;">
           <h4 style="font-size: 1rem; font-weight: 700; color: #3FD0C9; margin-bottom: 0.5rem;">Integrity</h4>
           <p style="color: #555; line-height: 1.6;">Represent people and causes honestly. No spin, no shortcuts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Value Modal (hidden by default) -->
+    <div id="valueModal" class="value-modal" style="display: none;">
+      <div class="value-modal-backdrop"></div>
+      <div class="value-modal-content">
+        <button class="value-modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+        <div class="value-modal-inner">
+          <h2 id="modalTitle" style="margin: 0 0 1rem;"></h2>
+          <p id="modalBody" style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #555;"></p>
         </div>
       </div>
     </div>
