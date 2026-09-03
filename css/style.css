@@ -161,6 +161,43 @@ a:focus-visible, button:focus-visible {
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
+.voice-memo-section {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.voice-memo-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(236, 237, 233, 0.12);
+  border-radius: 18px;
+  padding: 32px 28px;
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 20px 28px;
+  align-items: center;
+}
+
+.voice-memo-copy .section-title {
+  margin-bottom: 12px;
+}
+
+.voice-memo-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.voice-memo-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
 .btn {
   display: inline-block;
   padding: 14px 26px;

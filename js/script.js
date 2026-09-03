@@ -159,6 +159,80 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// Voice memo functionality
+const voiceMemoToggle = document.getElementById('voiceMemoToggle');
+const voiceMemoStop = document.getElementById('voiceMemoStop');
+const voiceMemoStatus = document.getElementById('voiceMemoStatus');
+const voiceMemoScript = 'This demo introduces 4K Rezolution, a media and leadership platform built for young creatives and communicators. The scene frames the brand as clear, bold, and purpose-driven, with visuals that highlight storytelling, public relations, community impact, and the energy of campus-led influence. The message is simple: young people can shape narratives, build visibility, and turn ideas into meaningful action.';
+let voiceMemoUtterance = null;
+
+function setVoiceMemoStatus(message) {
+  if (voiceMemoStatus) {
+    voiceMemoStatus.textContent = message;
+  }
+}
+
+function stopVoiceMemo() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+  setVoiceMemoStatus('Voice memo stopped.');
+  if (voiceMemoToggle) {
+    voiceMemoToggle.textContent = 'Play voice memo';
+  }
+}
+
+function playVoiceMemo() {
+  if (!('speechSynthesis' in window)) {
+    setVoiceMemoStatus('Voice playback is not supported in this browser.');
+    return;
+  }
+
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+  }
+
+  voiceMemoUtterance = new SpeechSynthesisUtterance(voiceMemoScript);
+  voiceMemoUtterance.lang = 'en-US';
+  voiceMemoUtterance.rate = 1;
+  voiceMemoUtterance.pitch = 1;
+
+  voiceMemoUtterance.onstart = () => {
+    setVoiceMemoStatus('Narrating the scene...');
+    if (voiceMemoToggle) {
+      voiceMemoToggle.textContent = 'Replay voice memo';
+    }
+  };
+
+  voiceMemoUtterance.onend = () => {
+    setVoiceMemoStatus('Scene summary complete.');
+    if (voiceMemoToggle) {
+      voiceMemoToggle.textContent = 'Play voice memo';
+    }
+  };
+
+  voiceMemoUtterance.onerror = () => {
+    setVoiceMemoStatus('The voice memo could not play on this device.');
+    if (voiceMemoToggle) {
+      voiceMemoToggle.textContent = 'Play voice memo';
+    }
+  };
+
+  window.speechSynthesis.speak(voiceMemoUtterance);
+}
+
+if (voiceMemoToggle) {
+  voiceMemoToggle.addEventListener('click', () => {
+    playVoiceMemo();
+  });
+}
+
+if (voiceMemoStop) {
+  voiceMemoStop.addEventListener('click', () => {
+    stopVoiceMemo();
+  });
+}
+
 // Media lightbox functionality
 const mediaThumbWrappers = document.querySelectorAll('.media-thumb-wrapper');
 const mediaModal = document.getElementById('mediaModal');
