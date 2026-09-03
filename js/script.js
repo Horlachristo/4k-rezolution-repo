@@ -163,7 +163,8 @@ document.addEventListener('keydown', (e) => {
 const voiceMemoToggle = document.getElementById('voiceMemoToggle');
 const voiceMemoStop = document.getElementById('voiceMemoStop');
 const voiceMemoStatus = document.getElementById('voiceMemoStatus');
-const voiceMemoScript = 'This demo introduces 4K Rezolution, a media and leadership platform built for young creatives and communicators. The scene frames the brand as clear, bold, and purpose-driven, with visuals that highlight storytelling, public relations, community impact, and the energy of campus-led influence. The message is simple: young people can shape narratives, build visibility, and turn ideas into meaningful action.';
+const voiceMemoTranscript = document.getElementById('voiceMemoTranscript');
+const voiceMemoScript = 'This demo introduces 4K Rezolution as a media and leadership platform for young creatives, communicators, and student leaders. It frames the brand as bold, clear, and purpose-driven, showing how storytelling, visibility, and community impact work together to shape real influence.';
 let voiceMemoUtterance = null;
 
 function setVoiceMemoStatus(message) {
@@ -178,7 +179,7 @@ function stopVoiceMemo() {
   }
   setVoiceMemoStatus('Voice memo stopped.');
   if (voiceMemoToggle) {
-    voiceMemoToggle.textContent = 'Play voice memo';
+    voiceMemoToggle.textContent = 'Play scene summary';
   }
 }
 
@@ -200,21 +201,24 @@ function playVoiceMemo() {
   voiceMemoUtterance.onstart = () => {
     setVoiceMemoStatus('Narrating the scene...');
     if (voiceMemoToggle) {
-      voiceMemoToggle.textContent = 'Replay voice memo';
+      voiceMemoToggle.textContent = 'Replay scene summary';
+    }
+    if (voiceMemoTranscript) {
+      voiceMemoTranscript.textContent = voiceMemoScript;
     }
   };
 
   voiceMemoUtterance.onend = () => {
     setVoiceMemoStatus('Scene summary complete.');
     if (voiceMemoToggle) {
-      voiceMemoToggle.textContent = 'Play voice memo';
+      voiceMemoToggle.textContent = 'Play scene summary';
     }
   };
 
   voiceMemoUtterance.onerror = () => {
     setVoiceMemoStatus('The voice memo could not play on this device.');
     if (voiceMemoToggle) {
-      voiceMemoToggle.textContent = 'Play voice memo';
+      voiceMemoToggle.textContent = 'Play scene summary';
     }
   };
 

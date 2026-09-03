@@ -63,11 +63,26 @@
         <h2 class="section-title">Scene summary</h2>
         <p class="section-sub">A quick spoken walkthrough of what this demo is about and what the brand is trying to communicate.</p>
       </div>
-      <div class="voice-memo-controls">
-        <button id="voiceMemoToggle" class="btn btn-primary" type="button" aria-live="polite">Play voice memo</button>
-        <button id="voiceMemoStop" class="btn btn-ghost" type="button">Stop</button>
+
+      <div class="voice-memo-panel">
+        <div class="voice-wave" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span>
+        </div>
+
+        <div class="voice-memo-controls">
+          <button id="voiceMemoToggle" class="btn btn-primary" type="button" aria-live="polite">Play scene summary</button>
+          <button id="voiceMemoStop" class="btn btn-ghost" type="button">Stop</button>
+        </div>
       </div>
+
       <p id="voiceMemoStatus" class="voice-memo-status">Ready to explain the scene.</p>
+
+      <div class="voice-memo-transcript">
+        <h3>Transcript</h3>
+        <p id="voiceMemoTranscript">This demo introduces 4K Rezolution as a media and leadership platform for young creatives, communicators, and student leaders. It frames the brand as bold, clear, and purpose-driven, showing how storytelling, visibility, and community impact work together to shape real influence.</p>
+      </div>
     </div>
   </div>
 </section>
